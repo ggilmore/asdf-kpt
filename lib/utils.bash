@@ -63,6 +63,10 @@ install_version() {
     tar -xzf "$release_file" -C "$install_path" --strip-components=1 || fail "Could not extract $release_file"
     rm "$release_file"
 
+    # build binary
+    export GO111MODULE="on"
+    go build -ldflags -X main.version="${version}" -trimpath -o "${install_path}/bin/kpt"
+
     # TODO: Asert kpt executable exists.
     local tool_cmd
     tool_cmd="$(echo "kpt --help" | cut -d' ' -f2-)"
