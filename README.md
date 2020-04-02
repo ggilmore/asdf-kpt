@@ -1,15 +1,59 @@
-# asdf-plugin-template
+<div align="center">
 
-This is an [asdf-vm plugin](https://asdf-vm.com/#/plugins-create) template with CI to run [Shellcheck](https://github.com/koalaman/shellcheck) and testing with the [asdf test GitHub Action](https://github.com/asdf-vm/actions).
+# asdf-kpt ![Build](https://github.com/ggilmore/asdf-kpt/workflows/Build/badge.svg) ![Lint](https://github.com/ggilmore/asdf-kpt/workflows/Lint/badge.svg)
 
+[kpt](https://googlecontainertools.github.io/kpt/) plugin for the [asdf version manager](https://asdf-vm.com).
 
-## Usage
+</div>
 
-1. Create repository based on [this template](https://github.com/asdf-vm/asdf-plugin-template/generate)
-2. Clone locally and run `bash setup.bash`.
-3. Adapt your code following the `TODO` notes on `lib/utils.bash`.
-4. Last but not least, be sure to read all you can do with your awesome plugin, read the [plugins create section of the docs](https://asdf-vm.com/#/plugins-create).
+# Contents
 
-## Contributing
+- [Dependencies](#dependencies)
+- [Install](#install)
+- [Why?](#why)
+- [Contributing](#contributing)
+- [License](#license)
 
-Contributions welcome!
+# Dependencies
+
+- `bash`, `curl`, `tar`: generic POSIX utilities.
+- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+
+# Install
+
+Plugin:
+
+```shell
+asdf plugin add kpt
+# or
+asdf plugin add https://github.com/ggilmore/asdf-kpt.git
+```
+
+kpt:
+
+```shell
+# Show all installable versions
+asdf list-all kpt
+
+# Install specific version
+asdf install kpt latest
+
+# Set a version globally (on your ~/.tool-versions file)
+asdf global kpt latest
+
+# Now kpt commands are available
+kpt --help
+```
+
+Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
+install & manage versions.
+
+# Contributing
+
+Contributions of any kind welcome! See the [contributing guide](contributing.md).
+
+[Thanks goes to these contributors](https://github.com/ggilmore/asdf-kpt/graphs/contributors)!
+
+# License
+
+See [LICENSE](LICENSE) © [Geoffrey Gilmore](https://github.com/ggilmore/)
