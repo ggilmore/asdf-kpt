@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -euxo pipefail
 
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for kpt.
 GH_REPO="https://github.com/GoogleContainerTools/kpt"
@@ -65,6 +65,7 @@ install_version() {
 
     # build binary
     export GO111MODULE="on"
+    echo $(which go)
     go build -ldflags -X main.version="${version}" -trimpath -o "${install_path}/bin/kpt"
 
     # TODO: Asert kpt executable exists.
