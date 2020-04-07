@@ -12,10 +12,10 @@ fail() {
 
 curl_opt="-fsSL"
 
-# NOTE: You might want to remove this if <YOUR TOOL> is not hosted on GitHub releases.
-if [ -n "${GITHUB_API_TOKEN:-}" ]; then
-  curl_opt="$curl_opt -H 'Authorization: token $GITHUB_API_TOKEN'"
-fi
+# # NOTE: You might want to remove this if <YOUR TOOL> is not hosted on GitHub releases.
+# if [ -n "${GITHUB_API_TOKEN:-}" ]; then
+#   curl_opt="$curl_opt -H 'Authorization: token $GITHUB_API_TOKEN'"
+# fi
 
 sort_versions() {
   sed 'h; s/[+-]/./g; s/.p\([[:digit:]]\)/.z\1/; s/$/.z/; G; s/\n/ /' |
