@@ -63,6 +63,8 @@ install_version() {
     tar -xzf "$release_file" -C "$install_path" --strip-components=1 || fail "Could not extract $release_file"
     rm "$release_file"
 
+    which go
+    go version
     # TODO: Asert <YOUR TOOL> executable exists.
     local tool_cmd
     tool_cmd="$(echo "<TOOL CHECK>" | cut -d' ' -f2-)"
